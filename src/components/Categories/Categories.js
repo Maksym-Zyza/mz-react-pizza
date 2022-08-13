@@ -1,15 +1,21 @@
-// import React from 'react';
+import React from 'react';
+import { categories } from '../../StaticData';
 
 export const Categories = () => {
+  const [active, setActive] = React.useState('');
+
   return (
     <div className="categories">
       <ul>
-        <li className="active">Все</li>
-        <li>Мясные</li>
-        <li>Вегетарианская</li>
-        <li>Гриль</li>
-        <li>Острые</li>
-        <li>Закрытые</li>
+        {categories.map(el => (
+          <li
+            key={el}
+            onClick={e => setActive(e.target.innerText)}
+            className={active === el ? 'active' : ''}
+          >
+            {el}
+          </li>
+        ))}
       </ul>
     </div>
   );

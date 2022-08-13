@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza1",
+    "type": [0, 1],
+    "size": [20, 30, 40],
+    "price": 15,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza2",
+    "type": [1],
+    "size": [20, 30, 40],
+    "price": 14,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza3",
+    "type": [0, 1],
+    "size": [20, 30, 40],
+    "price": 12,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza4",
+    "type": [0],
+    "size": [20, 30, 40],
+    "price": 16,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza5",
+    "type": [1],
+    "size": [20, 30, 40],
+    "price": 22,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza6",
+    "type": [0, 1],
+    "size": [20, 30, 40],
+    "price": 20,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza7",
+    "type": [0, 1],
+    "size": [20, 30, 40],
+    "price": 18,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza8",
+    "type": [0, 1],
+    "size": [20, 30, 40],
+    "price": 15,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "name": "piza9",
+    "type": [0, 1],
+    "size": [20, 30, 40],
+    "price": 20,
+    "category": 0,
+    "rating": 4
+  }
+]

@@ -1,6 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import './App.css';
 import './scss/app.scss';
+import pizzas from './pizzas.json';
 import { Header } from './components/Header/Header';
 import { Categories } from './components/Categories/Categories';
 import { Sort } from './components/Sort/Sort';
@@ -17,11 +18,11 @@ const App = () => {
               <Categories />
               <Sort />
             </div>
-            <h2 className="content__title">Все пиццы</h2>
+            <h2 className="content__title">All pizza</h2>
             <div className="content__items">
-              <PizzaBlock title="piza1" prise="15" />
-              <PizzaBlock title="piza2" prise="20" />
-              <PizzaBlock />
+              {pizzas.map(pizza => (
+                <PizzaBlock key={pizza.id} {...pizza} />
+              ))}
             </div>
           </div>
         </div>

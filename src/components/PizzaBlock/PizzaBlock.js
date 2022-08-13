@@ -1,28 +1,49 @@
-// import React from 'react';
+import React, { useState } from 'react';
+import { typeNames } from '../../StaticData';
 
-export const PizzaBlock = props => {
+export const PizzaBlock = ({ imageUrl, name, type, size, price }) => {
+  const [pizzaCount, setPizzaCount] = useState(0);
+  const [activeType, setActiveType] = useState(type[0]);
+  const [activeSize, setActiveSize] = useState(30);
+
+  const handleBtnAdd = () => {
+    setPizzaCount(prev => prev + 1);
+  };
+
   return (
     <div className="pizza-block">
-      <img
-        className="pizza-block__image"
-        src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-        alt="Pizza"
-      />
-      <h4 className="pizza-block__title">{props.title}</h4>
+      <img className="pizza-block__image" src={imageUrl} alt={name} />
+      <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
         <ul>
-          <li className="active">тонкое</li>
-          <li>традиционное</li>
+          {type.map(el => (
+            <li
+              key={el}
+              onClick={() => setActiveType(el)}
+              className={activeType === el ? 'active' : ''}
+            >
+              {typeNames[el]}
+            </li>
+          ))}
         </ul>
         <ul>
-          <li className="active">26 см.</li>
-          <li>30 см.</li>
-          <li>40 см.</li>
+          {size.map(el => (
+            <li
+              key={el}
+              onClick={() => setActiveSize(el)}
+              className={activeSize === el ? 'active' : ''}
+            >
+              {el} cm
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {props.prise} $</div>
-        <div className="button button--outline button--add">
+        <div className="pizza-block__price">от {price} $</div>
+        <button
+          className="button button--outline button--add"
+          onClick={handleBtnAdd}
+        >
           <svg
             width="12"
             height="12"
@@ -36,8 +57,8 @@ export const PizzaBlock = props => {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
-        </div>
+          <i>{pizzaCount}</i>
+        </button>
       </div>
     </div>
   );
