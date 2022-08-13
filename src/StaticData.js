@@ -8,3 +8,5 @@ export const categories = [
 ];
 
 export const typeNames = ['Think', 'Traditional'];
+
+export const sortNames = ['Popularity', 'Price', 'Alphabet'];

@@ -18,7 +18,7 @@ const App = () => {
               <Categories />
               <Sort />
             </div>
-            <h2 className="content__title">All pizza</h2>
+            <h2 className="content__title">All pizzas</h2>
             <div className="content__items">
               {pizzas.map(pizza => (
                 <PizzaBlock key={pizza.id} {...pizza} />
