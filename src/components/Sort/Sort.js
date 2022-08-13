@@ -10,7 +10,7 @@ export const Sort = () => {
       <div className="sort__label">
         <b>Sort by:</b>
         <div onClick={() => setIsSots(!isSots)}>
-          <b>{isSots ? <span>&#9660;</span> : <span>&#9650;</span>}</b>
+          {isSots ? <span>&#9650;</span> : <span>&#9660;</span>}
           <span>{selectedSots}</span>
         </div>
       </div>
