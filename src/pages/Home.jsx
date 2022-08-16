@@ -14,6 +14,8 @@ export const Home = () => {
       .then(result => setPizzas(result))
       .then(error => console.log(error))
       .finally(() => setIsLoader(false));
+
+    window.scrollTo(0, 0);
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as PizzaLogo } from '../../img/pizza-logo.svg';
+import { PizzaLogo } from '../../img/icons';
 
 export const Header = () => {
   return (
