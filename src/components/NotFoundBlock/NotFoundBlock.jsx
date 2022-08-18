@@ -1,8 +1,6 @@
 import React from 'react';
 import style from './NotFoundBlock.module.scss';
 
-console.log(style);
-
 export const NotFoundBlock = () => {
   return (
     <div className={style.main}>

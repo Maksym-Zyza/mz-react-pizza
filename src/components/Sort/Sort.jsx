@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import { sortNames } from '../../StaticData';
 
-export const Sort = () => {
-  const [selectedSots, setSelectedSots] = useState(sortNames[0]);
-  const [isSots, setIsSots] = useState(false);
+export const Sort = ({ sort, setSort, order, setOrder }) => {
+  const [isSort, setIsSort] = useState(false);
 
   return (
     <div className="sort">
       <div className="sort__label">
         <b>Sort by:</b>
-        <div onClick={() => setIsSots(!isSots)}>
-          {isSots ? <span>&#9650;</span> : <span>&#9660;</span>}
-          <span>{selectedSots}</span>
+        <div onClick={() => setIsSort(!isSort)}>
+          {isSort ? <span>&#9650;</span> : <span>&#9660;</span>}
+          <span>{sort}</span>
+        </div>
+        <div onClick={() => setOrder(!order)} className="order">
+          {order ? <span>&darr;</span> : <span>&uarr;</span>}
         </div>
       </div>
 
-      {isSots && (
+      {isSort && (
         <div className="sort__popup">
           <ul>
             {sortNames.map(el => (
               <li
                 key={el}
                 onClick={() => {
-                  setSelectedSots(el), setIsSots(false);
+                  setSort(el), setIsSort(false);
                 }}
-                className={selectedSots === el ? 'active' : ''}
+                className={sort === el ? 'active' : ''}
               >
                 {el}
               </li>

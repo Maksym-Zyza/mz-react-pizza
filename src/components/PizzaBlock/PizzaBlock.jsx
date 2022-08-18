@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { typeNames } from '../../StaticData';
 
-export const PizzaBlock = ({ imageUrl, name, type, size, price }) => {
+export const PizzaBlock = ({ imageUrl, name, type, size, price, rating }) => {
   const [pizzaCount, setPizzaCount] = useState(0);
   const [activeType, setActiveType] = useState(type[0]);
   const [activeSize, setActiveSize] = useState(30);
@@ -13,7 +13,9 @@ export const PizzaBlock = ({ imageUrl, name, type, size, price }) => {
   return (
     <div className="pizza-block">
       <img className="pizza-block__image" src={imageUrl} alt={name} />
-      <h4 className="pizza-block__title">{name}</h4>
+      <h4 className="pizza-block__title">
+        {name} - {rating}
+      </h4>
       <div className="pizza-block__selector">
         <ul>
           {type.map(el => (
