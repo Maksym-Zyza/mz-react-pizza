@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
+import { AppContext } from '../../context/AppContext';
 import { ResetImg, SearchImg } from '../../img/icons';
 import styles from './Search.module.scss';
 
-export const Search = ({ search, setSearch }) => {
+export const Search = () => {
+  const { search, setSearch } = React.useContext(AppContext);
   const inputRef = useRef(null);
-  console.log(search);
 
   const onClickClear = () => {
     setSearch('');

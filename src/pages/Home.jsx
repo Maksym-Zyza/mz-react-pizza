@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-// import { ApsContext } from '../context/AppContext';
+import React, { useState, useEffect, useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 import { Categories } from '../components/Categories/Categories';
 import { Sort } from '../components/Sort/Sort';
 import { PizzaBlock } from '../components/PizzaBlock/PizzaBlock';
@@ -8,9 +8,8 @@ import { Pagination } from '../components/Pagination/Pagination';
 import { sortNames } from '../StaticData';
 import { categories } from '../StaticData';
 
-export const Home = ({ search }) => {
-  // const { pizzas, setPizzas } = useContext(ApsContext);
-  const [pizzas, setPizzas] = useState([]);
+export const Home = () => {
+  const { pizzas, setPizzas, search } = useContext(AppContext);
   const [category, setCategory] = React.useState('All');
   const [sort, setSort] = useState(sortNames[0]);
   const [order, setOrder] = useState(true);
@@ -47,7 +46,7 @@ export const Home = ({ search }) => {
     window.scrollTo(0, 0);
   }, [sort, order, category, search, page]);
 
-  const allPizzas = pizzas.map(pizza => (
+  const allPizzas = pizzas?.map(pizza => (
     <PizzaBlock key={pizza.id} {...pizza} />
   ));
   const skeleton = [...new Array(8)].map((_, ind) => <Skeleton key={ind} />);
