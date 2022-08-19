@@ -4,17 +4,18 @@ import { Categories } from '../components/Categories/Categories';
 import { Sort } from '../components/Sort/Sort';
 import { PizzaBlock } from '../components/PizzaBlock/PizzaBlock';
 import { Skeleton } from '../components/PizzaBlock/Skeleton';
+import { Pagination } from '../components/Pagination/Pagination';
 import { sortNames } from '../StaticData';
 import { categories } from '../StaticData';
 
-export const Home = () => {
+export const Home = ({ search }) => {
   // const { pizzas, setPizzas } = useContext(ApsContext);
   const [pizzas, setPizzas] = useState([]);
   const [category, setCategory] = React.useState('All');
   const [sort, setSort] = useState(sortNames[0]);
   const [order, setOrder] = useState(true);
+  const [page, setPage] = useState(1);
   const [isLoader, setIsLoader] = useState(true);
-  console.log(category);
 
   useEffect(() => {
     let sortValue = '';
@@ -30,12 +31,13 @@ export const Home = () => {
         sortValue = '?sortBy=name&order=' + orderValue;
         break;
     }
-
-    const searchValue =
+    const categoryValue =
       category !== 'All' ? `&category=${categories.indexOf(category)}` : '';
+    const searchValue = search ? `&search=${search}` : '';
+    const pageParams = page ? `&page=${page}&limit=4` : '';
 
     fetch(
-      `https://62f897b43eab3503d1d855b0.mockapi.io/api/items${sortValue}${searchValue}`,
+      `https://62f897b43eab3503d1d855b0.mockapi.io/api/items${sortValue}${categoryValue}${searchValue}${pageParams}`,
     )
       .then(response => response.json())
       .then(result => setPizzas(result))
@@ -43,7 +45,12 @@ export const Home = () => {
       .finally(() => setIsLoader(false));
 
     window.scrollTo(0, 0);
-  }, [sort, order, category]);
+  }, [sort, order, category, search, page]);
+
+  const allPizzas = pizzas.map(pizza => (
+    <PizzaBlock key={pizza.id} {...pizza} />
+  ));
+  const skeleton = [...new Array(8)].map((_, ind) => <Skeleton key={ind} />);
 
   return (
     <>
@@ -52,11 +59,8 @@ export const Home = () => {
         <Sort sort={sort} setSort={setSort} order={order} setOrder={setOrder} />
       </div>
       <h2 className="content__title">All pizzas</h2>
-      <div className="content__items">
-        {isLoader
-          ? [...new Array(8)].map((_, ind) => <Skeleton key={ind} />)
-          : pizzas.map(pizza => <PizzaBlock key={pizza.id} {...pizza} />)}
-      </div>
+      <div className="content__items">{isLoader ? skeleton : allPizzas}</div>
+      <Pagination page={page} setPage={setPage} />
     </>
   );
 };

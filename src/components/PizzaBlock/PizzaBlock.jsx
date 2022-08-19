@@ -14,7 +14,7 @@ export const PizzaBlock = ({ imageUrl, name, type, size, price, rating }) => {
     <div className="pizza-block">
       <img className="pizza-block__image" src={imageUrl} alt={name} />
       <h4 className="pizza-block__title">
-        {name} - {rating}
+        {name} &#11088; {rating}
       </h4>
       <div className="pizza-block__selector">
         <ul>

@@ -10,12 +10,13 @@
     justify-content: space-between;
 
     .header__logo {
+      margin-bottom: 15px;
       svg {
         margin: 10px;
       }
     }
 
-    @media (max-width: 645px) {
+    @media (max-width: 1050px) {
       flex-direction: column;
 
       .header__cart {
